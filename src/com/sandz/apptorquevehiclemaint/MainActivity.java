@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		LayoutInflater inflater = LayoutInflater.from(this);
 		View view = inflater.inflate(R.layout.activity_main, null);
-		textView = (TextView)view.findViewById(R.id.Settings);
+		textView = (TextView)view.findViewById(R.id.textview);
 
 		// Max of 2 digits for readings.
 		nf = NumberFormat.getInstance();
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
-		new MenuInflater(this).inflate(R.menu.main, menu);
+		new MenuInflater(this).inflate(R.menu.option, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		if(item.getItemId() == R.id.Settings){
-			startActivity(new Intent(,));
+			startActivity(new Intent(MainActivity.this,ConfigActivity.class));
 			return true;
 		}
 		
