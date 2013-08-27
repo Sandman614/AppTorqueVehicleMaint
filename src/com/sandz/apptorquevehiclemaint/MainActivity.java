@@ -16,6 +16,9 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -53,7 +56,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		LayoutInflater inflater = LayoutInflater.from(this);
 		View view = inflater.inflate(R.layout.activity_main, null);
-		textView = (TextView)view.findViewById(R.id.action_settings);
+		textView = (TextView)view.findViewById(R.id.Settings);
 
 		// Max of 2 digits for readings.
 		nf = NumberFormat.getInstance();
@@ -62,6 +65,25 @@ public class MainActivity extends Activity {
 		handler = new Handler();
 
 		setContentView(view);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		new MenuInflater(this).inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId() == R.id.Settings){
+			startActivity(new Intent(,));
+			return true;
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override

@@ -1,3 +1,4 @@
+<<<<<<< Original
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sandz.apptorquevehiclemaint"
@@ -9,22 +10,45 @@
         android:targetSdkVersion="17" />
 
     <application
-        android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.sandz.apptorquevehiclemaint.Vehicles"
+            android:name=".MainActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
+            android:finishOnTaskLaunch="false"
             android:label="@string/app_name" >
+            
+<!--             Advertises what the application is capable of doing -->
+            <intent-filter>
+                <action android:name="org.prowl.torque.ACTIVITY_PLUGIN" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.prowl.torque.PID_PLUGIN" />
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
-            android:name="com.sandz.apptorquevehiclemaint.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:name=".ConfigActivity"
+            android:label="@string/app_name" >
         </activity>
     </application>
 
 </manifest>
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application>
+        <activity android:name=".ConfigActivity"
+            android:label="@string/title_activity_config"
+            >
+        </activity>
+    </application>
+
+</manifest>
+>>>>>>> Added
